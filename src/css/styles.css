@@ -1,0 +1,31 @@
+ol,
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gallery {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  width: calc(360px * 3 + 48px);
+  margin: 24px auto;
+}
+
+.gallery-image {
+  transition: transform 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.gallery-image:focus,
+.gallery-image:hover {
+  transform: scale(1.042);
+}
+
+.sl-caption {
+  transition: opasity 250ms ease-in-out;
+}
+
+.modal-opened-caption {
+  opacity: 1;
+}
