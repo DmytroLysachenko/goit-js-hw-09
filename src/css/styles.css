@@ -39,6 +39,7 @@ ul {
   margin: 0 auto;
   gap: 8px;
   border: 1px solid tomato;
+  position: relative;
 }
 
 textarea {
@@ -96,4 +97,22 @@ form button {
 form button:hover,
 form button:focus {
   background-color: #6c8cff;
+}
+
+.msg-box {
+  position: absolute;
+  color: red;
+  padding: 2px 4px;
+  left: calc(50% - (283px / 2));
+  bottom: -12px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: lightgray;
+  transition: opacity 250ms ease-in-out;
+  opacity: 1;
+}
+
+.visually-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
