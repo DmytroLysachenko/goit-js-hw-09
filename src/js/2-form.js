@@ -10,6 +10,7 @@ let msgBox = document.createElement('p');
 
 msgBox.textContent = 'Wrong values, please type in Email and Message';
 msgBox.classList.add('msg-box');
+msgBox.classList.add('visually-hidden');
 form.prepend(msgBox);
 
 email.value = savedValues.email ?? '';
@@ -26,16 +27,12 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   if (textArea.value !== '' && email.value !== '') {
     submittedMsgs.push(savedValues);
-    if (!msgBox.classList.contains('visually-hidden')) {
-      msgBox.classList.toggle('visually-hidden');
-    }
+    msgBox.classList.add('visually-hidden');
     email.value = '';
     textArea.value = '';
     localStorage.removeItem('feedback-form-state');
     console.log(submittedMsgs);
   } else {
-    if (msgBox.classList.contains('visually-hidden')) {
-      msgBox.classList.toggle('visually-hidden');
-    }
+    msgBox.classList.remove('visually-hidden');
   }
 });
