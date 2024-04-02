@@ -115,4 +115,5 @@ form button:focus {
 .visually-hidden {
   opacity: 0;
   pointer-events: none;
+  font-size: 10px;
 }
