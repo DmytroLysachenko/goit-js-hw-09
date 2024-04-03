@@ -79,11 +79,9 @@ const createElements = images => {
     img.classList.add('gallery-image');
     img.setAttribute('src', preview);
     img.setAttribute('alt', description);
-    img.setAttribute('title', description);
     img.setAttribute('width', '360');
     img.setAttribute('height', '200');
     link.setAttribute('href', original);
-    img.style.display = 'block';
     link.append(img);
     item.append(link);
     newElements.push(item);
@@ -94,4 +92,7 @@ const createElements = images => {
 const addElements = newElements => gallery.append(...newElements);
 
 addElements(createElements(images));
-const lightbox = new simpleLightbox('.gallery a', { captionDelay: 250 });
+const lightbox = new simpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionData: 'alt',
+});

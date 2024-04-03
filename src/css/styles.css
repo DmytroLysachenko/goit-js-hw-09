@@ -17,6 +17,7 @@ ul {
 .gallery-image {
   transition: transform 100ms ease-in-out;
   cursor: pointer;
+  display: block;
 }
 
 .gallery-image:focus,
