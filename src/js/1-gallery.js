@@ -1,4 +1,5 @@
-import simpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
 
 const images = [
   {
@@ -92,7 +93,23 @@ const createElements = images => {
 const addElements = newElements => gallery.append(...newElements);
 
 addElements(createElements(images));
-const lightbox = new simpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
-  captionData: 'alt',
+  captionsData: 'alt',
+});
+
+lightbox.on('shown.simplelightbox', function () {
+  const overlay = document.querySelector('.sl-overlay');
+  const closeBtn = document.querySelector('.sl-wrapper .sl-close');
+  const counter = document.querySelector('.sl-wrapper .sl-counter');
+  const buttonNext = document.querySelector('.sl-next');
+  const buttonPrev = document.querySelector('.sl-prev');
+  const iframe = document.querySelector('.sl-wrapper .sl-image iframe');
+  console.log(overlay);
+  overlay.id = 'overlay';
+  closeBtn.id = 'close';
+  counter.id = 'counter';
+  buttonNext.id = 'buttonNext';
+  buttonPrev.id = 'buttonPrev';
+  iframe.id = 'iframe';
 });

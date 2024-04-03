@@ -9,25 +9,12 @@ msgBox.classList.add('msg-box');
 msgBox.classList.add('visually-hidden');
 form.prepend(msgBox);
 
-const initialLoad = () => {
-  try {
-    const exportedValues = JSON.parse(
-      localStorage.getItem('feedback-form-state')
-    );
-    if (exportedValues === null) {
-      return;
-    }
-    email.value = exportedValues.email ?? '';
-    textArea.value = exportedValues.message ?? '';
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-initialLoad();
+const savedValues =
+  JSON.parse(localStorage.getItem('feedback-form-state')) ?? {};
+email.value = savedValues.email ?? '';
+textArea.value = savedValues.message ?? '';
 
 const onFormInput = event => {
-  const savedValues = JSON.parse(localStorage.getItem('feedback-form-state'));
   const { target: targetElement } = event;
   const inputName = targetElement.name;
   const inputValue = targetElement.value.trim();
