@@ -78,7 +78,6 @@ const createElements = images => {
     link.classList.add('gallery-link');
     img.classList.add('gallery-image');
     img.setAttribute('src', preview);
-    img.setAttribute('data-source', original);
     img.setAttribute('alt', description);
     img.setAttribute('title', description);
     img.setAttribute('width', '360');
