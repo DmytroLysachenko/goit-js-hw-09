@@ -93,6 +93,7 @@ const createElements = images => {
 const addElements = newElements => gallery.append(...newElements);
 
 addElements(createElements(images));
+
 const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   captionsData: 'alt',
